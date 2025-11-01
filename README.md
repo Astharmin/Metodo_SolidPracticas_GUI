@@ -5,8 +5,9 @@
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-0066CC?logo=python&logoColor=white)
 ![Design Patterns](https://img.shields.io/badge/Patterns-DAO%2C%20Iterator%2C%20Strategy-00A98F?style=flat)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Windows](https://img.shields.io/badge/Windows-Executable-0078D6?logo=windows&logoColor=white)
 
-> **Sistema de gestión de tareas implementando principios SOLID con interfaz gráfica moderna y arquitectura escalable**
+> **Sistema de gestión de tareas implementando principios SOLID con interfaz gráfica moderna y arquitectura escalable - Listo para usar en Windows**
 
 ---
 
@@ -40,15 +41,37 @@ graph TB
 
 ---
 
+## 📥 **Descarga e Instalación**
+
+### ⚡ **Instalación Instantánea para Windows**
+
+**Descarga directa del ejecutable:**
+[⬇️ Descargar GestorTareas.exe](https://github.com/Astharmin/gestor-tareas-solid/releases/latest/download/GestorTareas.exe)
+
+### 🚀 **Cómo Usar**
+1. **Descarga** el archivo `GestorTareas.exe`
+2. **Ejecuta** directamente (no requiere instalación)
+3. **¡Listo!** La aplicación se abrirá inmediatamente
+
+### 🔒 **Características del Ejecutable**
+- ✅ **Portable** - No requiere instalación
+- ✅ **Autónomo** - Incluye todo lo necesario
+- ✅ **Seguro** - Sin dependencias externas
+- ✅ **Ligero** - Tamaño optimizado
+- ✅ **Compatible** - Windows 10/11
+
+---
+
 ## 📁 **Estructura del Proyecto**
 
 ```
 gestor-tareas-solid/
-├── main.py                    # 🚀 Punto de entrada de la aplicación
-├── requirements.txt           # 📦 Dependencias del proyecto
-├── docs/                     # 📚 Documentación
-│   └── ARCHITECTURE.md       # 🏗️ Documentación técnica
-└── README.md                 # 📖 Este archivo
+├── GestorTareas.exe          # 🚀 Ejecutable principal (Windows)
+├── main.py                   # 📝 Código fuente Python
+├── requirements.txt          # 📦 Dependencias del proyecto
+├── docs/                    # 📚 Documentación
+│   └── ARCHITECTURE.md      # 🏗️ Documentación técnica
+└── README.md                # 📖 Este archivo
 ```
 
 ---
@@ -74,24 +97,6 @@ gestor-tareas-solid/
 - **Liskov Substitution** - Sustituibilidad garantizada
 - **Interface Segregation** - Interfaces específicas
 - **Dependency Inversion** - Dependencias en abstracciones
-
----
-
-## 🚀 **Instalación y Ejecución**
-
-### Prerrequisitos
-```bash
-# Python 3.8 o superior
-python --version
-
-# Tkinter (generalmente incluido en Python)
-python -m tkinter
-```
-### 📦 **Dependencias**
-```txt
-# El proyecto utiliza solo librerías estándar de Python
-# No se requieren instalaciones adicionales
-```
 
 ---
 
@@ -151,42 +156,40 @@ sequenceDiagram
 | **2 - Media** | 🟨 Amarillo | Importante |
 | **3 - Baja** | 🟩 Verde | Opcional |
 
-### 🔧 **Funcionalidades de UI**
-```python
-# Código de ejemplo - Configuración de estilos
-style.configure("alta.Treeview", background='#ffebee')
-style.configure("media.Treeview", background='#fff3e0') 
-style.configure("baja.Treeview", background='#e8f5e8')
-```
+---
+
+## 🔧 **Uso Rápido**
+
+### 🎯 **Primeros Pasos**
+1. **Descargar** el ejecutable desde el link anterior
+2. **Ejecutar** `GestorTareas.exe`
+3. **Agregar tareas** usando el panel superior
+4. **Organizar** por prioridades (Alta, Media, Baja)
+5. **Buscar y filtrar** según necesidades
+
+### ⚡ **Funcionalidades Clave**
+- **Agregar tarea**: Escribe descripción + selecciona prioridad
+- **Eliminar tarea**: Selecciona y click en "Eliminar Seleccionada"
+- **Buscar**: Escribe en el campo de búsqueda (filtrado automático)
+- **Filtrar por prioridad**: Usa el selector desplegable
+- **Ver estadísticas**: Click en "Estadísticas" para resumen
 
 ---
 
-## 🔧 **API del Servicio de Tareas**
+## 🔧 **Para Desarrolladores**
 
-### 📝 **Operaciones Principales**
-```python
-class ServicioTareas:
-    def agregar_tarea(self, descripcion: str, prioridad: int) -> bool
-    def eliminar_tarea(self, descripcion: str) -> bool
-    def buscar_tarea(self, descripcion: str) -> None
-    def filtrar_tareas_por_prioridad(self, prioridad: int) -> None
-    def filtrar_tareas_por_texto(self, texto: str) -> None
-    def mostrar_todas_tareas(self) -> None
-    def obtener_estadisticas(self) -> dict
+### 📦 **Ejecución desde Código Fuente**
+```bash
+# Solo si quieres modificar el código
+git clone https://github.com/Astharmin/gestor-tareas-solid.git
+cd gestor-tareas-solid
+python main.py
 ```
 
-### 🎯 **Ejemplos de Uso**
-```python
-# Agregar tarea de alta prioridad
-servicio.agregar_tarea("Revisar informe final", 1)
-
-# Filtrar tareas de prioridad media
-servicio.filtrar_tareas_por_prioridad(2)
-
-# Obtener estadísticas
-stats = servicio.obtener_estadisticas()
-print(f"Total tareas: {stats['total']}")
-```
+### 🛠️ **Requisitos para Desarrollo**
+- Python 3.8 o superior
+- Tkinter (incluido en Python estándar)
+- No se requieren dependencias adicionales
 
 ---
 
@@ -211,37 +214,6 @@ class FiltroTareas(ABC):
 class FiltroPorFecha(FiltroTareas):  # Nueva funcionalidad
     def filtrar(self, tarea: Tarea) -> bool:
         # Implementación específica
-```
-
-### ✅ **Liskov Substitution Principle**
-```python
-# Todas las implementaciones son sustituibles
-filtros = [
-    FiltroPorPrioridad(1),
-    FiltroPorTexto("urgente"),
-    FiltroPorFecha(datetime.now())
-]
-
-for filtro in filtros:
-    resultados = lista.aplicar_filtro(filtro)  # Funciona igual para todos
-```
-
-### ✅ **Interface Segregation Principle**
-```python
-# Interfaces específicas y cohesivas
-class OperacionesLista(ABC):        # Solo operaciones CRUD
-class PresentadorTareas(ABC):       # Solo presentación
-class FiltroTareas(ABC):            # Solo filtrado
-```
-
-### ✅ **Dependency Inversion Principle**
-```python
-# Depende de abstracciones, no de implementaciones
-class ServicioTareas:
-    def __init__(self, lista_tareas: OperacionesLista,  # Abstracción
-                 presentador: PresentadorTareas):        # Abstracción
-        self.lista_tareas = lista_tareas
-        self.presentador = presentador
 ```
 
 ---
@@ -273,15 +245,6 @@ class FiltroPorPrioridad(FiltroTareas):
         return tarea.prioridad == self.prioridad
 ```
 
-### 📊 **Presenter Pattern**
-```python
-class PresentadorTareas(ABC):
-    @abstractmethod
-    def mostrar_tarea_agregada(self, tarea: Tarea) -> None
-    @abstractmethod 
-    def actualizar_lista_tareas(self, tareas: list[Tarea]) -> None
-```
-
 ---
 
 ## 🚀 **Características Avanzadas**
@@ -299,20 +262,7 @@ class PresentadorTareas(ABC):
 class TareaData:
     descripcion: str
     prioridad: int
-
-# Estadísticas en tiempo real
-def obtener_estadisticas(self) -> dict:
-    return {
-        "total": self.lista_tareas.contar(),
-        "prioridades": {1: 5, 2: 3, 3: 2}  # Datos reales
-    }
 ```
-
-### 🎨 **Experiencia de Usuario**
-- **Feedback visual inmediato** para todas las acciones
-- **Mensajes de estado descriptivos** en barra inferior
-- **Confirmaciones de eliminación** implícitas
-- **Focus management** inteligente entre campos
 
 ---
 
@@ -326,42 +276,7 @@ class FiltroPorFecha(FiltroTareas):
     
     def filtrar(self, tarea: Tarea) -> bool:
         return tarea.fecha_creacion <= self.fecha_limite
-
-# Uso inmediato sin modificar código existente
-filtro_fecha = FiltroPorFecha(datetime.now())
-tareas_filtradas = lista_tareas.aplicar_filtro(filtro_fecha)
 ```
-
-### 🎯 **Nuevos Presentadores**
-```python
-class PresentadorTareasConsola(PresentadorTareas):
-    def mostrar_tarea_agregada(self, tarea: Tarea) -> None:
-        print(f"✅ Tarea agregada: {tarea}")
-    
-    def actualizar_lista_tareas(self, tareas: list[Tarea]) -> None:
-        for tarea in tareas:
-            print(f" - {tarea}")
-```
-
----
-
-## 🤝 **Contribución al Proyecto**
-
-### 🛠️ **Guía de Desarrollo**
-1. **Sigue los principios SOLID** en nuevas funcionalidades
-2. **Mantén la separación de concerns** 
-3. **Usa tipos hints** para mejor mantenibilidad
-4. **Preserva la compatibilidad** de interfaces existentes
-
-### 📝 **Estructura de Commits**
-```
-feat: agregar nuevo filtro por fecha
-refactor: mejorar presentador GUI  
-fix: corregir eliminación de tareas
-docs: actualizar documentación SOLID
-```
-
----
 
 ## 📄 **Licencia**
 
@@ -370,6 +285,9 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 ---
 
 <div align="center">
+
+### ⚡ **¡Descarga y Usa Ahora!**
+[⬇️ Descargar GestorTareas.exe](https://github.com/Astharmin/gestor-tareas-solid/releases/latest/download/GestorTareas.exe)
 
 ### ⭐ **¿Te gusta la arquitectura SOLID?**
 ¡Dale una estrella al proyecto y comparte tus mejoras!
