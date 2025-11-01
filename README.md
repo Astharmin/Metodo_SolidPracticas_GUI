@@ -290,7 +290,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 [⬇️ Descargar GestorTareas.exe](https://github.com/Astharmin/gestor-tareas-solid/releases/latest/download/GestorTareas.exe)
 
 ### ⭐ **¿Te gusta la arquitectura SOLID?**
-¡Dale una estrella al proyecto y comparte tus mejoras!
+¡Dale una estrella al proyecto!
 
 **Desarrollado con ❤️ por [Astharmin](https://github.com/Astharmin)**
 
